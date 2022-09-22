@@ -4,5 +4,5 @@ function quat = jointToQuat(q)
   % q_IE.
   
   % PLACEHOLDER FOR OUTPUT -> REPLACE WITH SOLUTION
-  quat = zeros(4,1);
+  quat = rotMatToQuat(jointToRotMat(q));
 end
