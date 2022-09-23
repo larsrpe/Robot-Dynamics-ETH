@@ -47,5 +47,6 @@ function J_R = jointToRotJac_solution(q)
             R_I5*n_5 ...
             R_I6*n_6 ...
         ];
+   
   
 end
