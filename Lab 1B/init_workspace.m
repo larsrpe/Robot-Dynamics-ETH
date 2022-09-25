@@ -6,4 +6,4 @@ addpath(genpath(exercisefolder));
 clear thisfile exercisefolder;
 
 % Add params to workspace
-run("..\abbirb120params")
+%run("..\abbirb120params")

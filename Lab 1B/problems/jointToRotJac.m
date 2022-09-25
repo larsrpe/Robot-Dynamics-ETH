@@ -6,15 +6,16 @@ function J_R = jointToRotJac(q)
   % Compute the rotational jacobian.
   J_R = zeros(3, 6);
   
-  %get params for robot
+  ex=[1;0;0];
+  ey=[0;1;0];
+  ez=[0;0;1];
   %rotation axis
-  n01 = evalin('base','n01');
-  n12 = evalin('base','n12');
-  n23 = evalin('base','n23');
-  n34 = evalin('base','n34');
-  n45 = evalin('base','n45');
-  n56 = evalin('base','n56');
- 
+  n01 = ez;
+  n12 = ey;
+  n23 = ey;
+  n34 = ex;
+  n45 = ey;
+  n56 = ex;
 
   
   T_I0 = getTransformI0();
@@ -23,7 +24,7 @@ function J_R = jointToRotJac(q)
   T_I3 = T_I2*jointToTransform23(q);
   T_I4 = T_I3*jointToTransform34(q);
   T_I5 = T_I4*jointToTransform45(q);
-  T_I6 = T_I5*jointToTransform56(q);
+  
   
   R_I0 = T_I0(1:3,1:3);
   R_I1 = T_I1(1:3,1:3);

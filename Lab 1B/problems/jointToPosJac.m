@@ -6,27 +6,16 @@ function J_P = jointToPosJac(q)
   % Compute the translational jacobian.
   J_P = zeros(3, 6);
   
-  %get params for robot
-  
-  %links
-  r01 = evalin('base','r01');
-  r12 = evalin('base','r12');
-  r23 = evalin('base','r23');
-  r34 = evalin('base','r34');
-  r45 = evalin('base','r45');
-  r56 = evalin('base','r56');
-  r6e = evalin('base','r6e');
-  
+  ex=[1;0;0];
+  ey=[0;1;0];
+  ez=[0;0;1];
   %rotation axis
-  n01 = evalin('base','n01');
-  n12 = evalin('base','n12');
-  n23 = evalin('base','n23');
-  n34 = evalin('base','n34');
-  n45 = evalin('base','n45');
-  n56 = evalin('base','n56');
-  
+  n01 = ez;
+  n12 = ey;
+  n23 = ey;
+  n34 = ex;
+  n45 = ey;
 
-  
   T_I0 = getTransformI0();
   T_I1 = T_I0*jointToTransform01(q);
   T_I2 = T_I1*jointToTransform12(q);

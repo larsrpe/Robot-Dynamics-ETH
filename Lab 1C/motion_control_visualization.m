@@ -4,7 +4,9 @@ function [] = motion_control_visualization()
 % ============== Trajectory settings ======================
 ts = 0.05;                          % Set the sampling time (in seconds)
 r_start = [0.4 0.1 0.6].';          % 3x1 (m)
-r_end = [-0.4 0.3 0.5].';           % 3x1 (m)
+r_end = [-0.4 0.3 0.5].'; 
+r_end = [10;0;10]
+% 3x1 (m)
 v_line = 0.4;                       % 1x1 (m/s)
 q_0 = zeros(6,1);                   % 6x1 (rad)
 use_solution = 0;                   % 0: user implementation, 1: solution               
